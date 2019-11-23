@@ -3,18 +3,17 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to UCR-Robotics's documentation!
-========================================
+Welcome to UCR Robotics Documentation!
+======================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+    :maxdepth: 2
+    :hidden:
+
+    contribute
 
 
+News
+====
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+- 10/09/2019: Welcome!
