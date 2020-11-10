@@ -68,13 +68,11 @@ Now we are going to explain each sentence of the sample script. Please read care
 
     import rospy
     
-- This line imports a well-defined message type ``String`` that will be later used in ``rospy.Publisher``. You could find all information (as in the following figure) of a type of message by typing ``$message$ ros`` on google. Most of message types could be found at `std_msgs`_ or `_common_masgs`.
+- This line imports a well-defined message type ``String`` that will be later used in ``rospy.Publisher``. You could find all information of a type of message by typing ``$message$ ros`` on google. Most of message types could be found at `std_msgs`_ or `common_msgs`_.
 
 .. _std_msgs: http://wiki.ros.org/std_msgs
 .. _common_msgs: https://wiki.ros.org/common_msgs
 
-.. image:: figures/string.png
-    :width: 15%
 
 .. code-block:: python
 
