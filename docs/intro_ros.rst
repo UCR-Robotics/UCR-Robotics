@@ -4,7 +4,7 @@ Overview
 --------
 
 `Robot Operating System`_ (ROS) is a collection of software frameworks for robot software developments. 
-Although ROS is not an operatering system, it provides services designed for a heterogeneous computer cluster and a majority of the packges are open source. 
+Although ROS is not an operating system, it provides services designed for a heterogeneous computer cluster and a majority of the packages are open source. 
 One of its main advantages is that the client libraries (C++ and Python) allow nodes written in different programming languages to communicate. 
 It is a powerful tool embedded with hardware abstraction, low-level device control, 
 implementation of commonly used functionality, message-passing between processes, and package management.
@@ -18,9 +18,9 @@ Terminologies
 In ROS, all resources (e.g., data from different sensors) are ``Messages`` of ``Nodes``. 
 These ``Messages`` could be accessed and transmitted among ``Nodes`` as "Topics" (as well as ``Services`` and ``Actions``). 
 
-- ``Node``: An executable file, can publish or subscribe a ``Topic``.
+- ``Node``: An executable file, can publish or subscribe to a ``Topic``.
 - ``Topic``: Nodes are communicating over a ``Topic``.
-- ``Publish`` or ``Subscribe``: Broadcast or "listen to" the ``Message``
+- ``Publish`` or ``Subscribe``: Broadcast or receive the ``Message``
 
 Their relation could be expressed in the following figure.
 
@@ -68,7 +68,7 @@ Now we are going to explain each sentence of the sample script. Please read care
 
     import rospy
     
-- This line imports a well-defined message type ``String`` that will be later used in ``rospy.Publisher``. You could find all information of a type of message by typing ``$message$ ros`` on google. Most of message types could be found at `std_msgs`_ or `common_msgs`_.
+- This line imports a well-defined message type ``String`` that will be later used in ``rospy.Publisher``. You could find all information about a type of message by typing ``$message$ ros`` on google. Most of the message types could be found at `std_msgs`_ or `common_msgs`_.
 
 .. _std_msgs: http://wiki.ros.org/std_msgs
 .. _common_msgs: https://wiki.ros.org/common_msgs
@@ -111,7 +111,7 @@ Writing a Subscriber in Python
     from std_msgs.msg import String
 
     def callback(data):
-        rospy.loginfo(data.data) # Please check the previous figure to see why ".data" gives the content of "String"
+        rospy.loginfo(data.data) # Please consider why ".data" gives the content of "String"
  
  
     def talker():
@@ -123,7 +123,7 @@ Writing a Subscriber in Python
     if __name__ == '__main__':
         listener()
 
-- Declare a subscriber that your node ``listener`` will subscribe messages from the topic ``chatter``. The format of the message is defined as ``String`` and the received data are stored in the ``callback`` function. spin() keeps python from exiting until this node is stopped
+- Declare a subscriber that your node ``listener`` will subscribe to messages from the topic ``chatter``. The format of the message is defined as ``String`` and the received data are stored in the ``callback`` function. spin() keeps python from exiting until this node is stopped
 
 .. code-block:: python
 
@@ -132,7 +132,7 @@ Writing a Subscriber in Python
     
 The code for ``Subscriber`` is similar to ``Publisher``. The main difference is the ``Subscriber`` will call a ``callback`` function when new messages are received. 
 Note that the ``callback`` is a void function, i.e. it can't return anything. 
-So if we want to utilize the received message, we will introduce the Python ``Classes``. It provides a means of bundling data and functionality togther. 
+So if we want to utilize the received message, we will introduce the Python ``Classes``. It provides a means of bundling data and functionality together. 
 Here we will give a simple example to show how to combine ``Publisher`` with ``Subscriber`` and how to commit data collected in ``callback`` function through the script.
 (Note the code here is only for explaining the usage but make no sense in terms of control.)
 
@@ -177,11 +177,11 @@ Here we will give a simple example to show how to combine ``Publisher`` with ``S
         Bot()
 
 In the script above, we show how to communicate with a robot and design a feedback controller for it using ROS. 
-Firstly, we do initialization and propagate the system in the ``__init__``function. 
-Once we initialized the ``Subscriber``, the data in ``odom_callback`` will keep updating its information according to the new received data from topic ``/odom``. 
+Firstly, we do initialization and propagate the system in the ``__init__`` function. 
+Once we initialize the ``Subscriber``, the data in ``odom_callback`` will keep updating its information according to the new received data from topic ``/odom``. 
 So the variable ``pose`` will also keep updating. 
 At every 0.01s (10 hz), when we run the ``controller`` function, it can use current ``pose`` as feedback information for control.
-Then the control inputs are published to topic ``/cmd_vel``, which will be subsribed by the robot as current command.
+Then the control inputs are published to topic ``/cmd_vel``, which will be subscribed by the robot as current command.
 
 
 Using ``rqt_graph``
@@ -196,7 +196,7 @@ You could check whether your communication algorithm works or not. To use it, ju
 Frequently-used Commands
 ------------------------
 
-- ``roscore``: You must have a roscore running in order for ROS nodes to communicate. It will start up a `ROS Master`_, a `ROS Server`_ and a `rosout`_ loggin node.
+- ``roscore``: You must have a roscore running in order for ROS nodes to communicate. It will start up a `ROS Master`_, a `ROS Server`_ and a `rosout`_ logging node.
 
 .. _ROS Master: http://wiki.ros.org/Master
 .. _ROS Server: http://wiki.ros.org/Parameter%20Server
