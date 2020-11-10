@@ -25,7 +25,7 @@ These ``Messages`` could be accessed and transmitted among ``Nodes`` as "Topics"
 Their relation could be expressed in the following figure.
 
 .. image:: figures/communication.png
-    :width: 70%
+    :width: 90%
 
 Writing a Publisher in Python
 ------------------------------
