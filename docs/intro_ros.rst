@@ -197,11 +197,6 @@ Frequently-used Commands
 ------------------------
 
 - ``roscore``: You must have a roscore running in order for ROS nodes to communicate. It will start up a `ROS Master`_, a `ROS Server`_ and a `rosout`_ logging node.
-
-.. _ROS Master: http://wiki.ros.org/Master
-.. _ROS Server: http://wiki.ros.org/Parameter%20Server
-.. _rosout: http://wiki.ros.org/rosout
-
 - ``roslaunch $package_name$ $file.launch$``: is for easily launching multiple ROS nodes as well as setting parameters. A ``roslaunch`` will automatically start ``roscore``.
 - ``rosnode list``: lists all active nodes that are currently running.
 - ``rosnode info $node$``: show information of the node, e.g., publications; subscriptions.
@@ -209,3 +204,14 @@ Frequently-used Commands
 - ``rostopic echo $topic$``: print message to screen.
 - ``rostopic type $topic$``: print topic type (message type)
 - ``rosrun $package$ $executable$``:rosrun allows you to run an executable in an arbitrary package from anywhere without having to give its full path
+
+.. _ROS Master: http://wiki.ros.org/Master
+.. _ROS Server: http://wiki.ros.org/Parameter%20Server
+.. _rosout: http://wiki.ros.org/rosout
+
+Communication with Gazebo Simulator
+-----------------------------------
+`Gazebo`_ is an open-source 3D robotics simulator. It offers the ability to accurately and efficiently simulate populations of robots in complex indoor and outdoor environments.
+You could use it for rapidly and safely testing your algorithms, designing robots and collecting or training a large amount of data using realistic scenarios. 
+
+.. _Gazebo: http://gazebosim.org/tutorials
