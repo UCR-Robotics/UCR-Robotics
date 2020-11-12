@@ -55,7 +55,7 @@ please see `how to contribute <contribute.html>`_.
 .. toctree::
     :maxdepth: 2
     :hidden:
-    :caption: TurtleBot
+    :caption: Differential-Drive Robot
 
     tbot/turtlebot
 
@@ -63,7 +63,7 @@ please see `how to contribute <contribute.html>`_.
 .. toctree::
     :maxdepth: 2
     :hidden:
-    :caption: Crazyflie
+    :caption: Aerial Robot
 
     cf/crazyflie
 
