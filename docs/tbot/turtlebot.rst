@@ -1,4 +1,4 @@
 
-Introduction to TurtleBot
+Kinematics and Control for Mobile Robot
 =========================
 
