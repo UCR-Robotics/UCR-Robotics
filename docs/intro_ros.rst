@@ -233,4 +233,6 @@ If you are building your own robot and want to simulate it in Gazebo, please loo
 .. _tutorial: http://gazebosim.org/tutorials?cat=build_robot
 
 Now we will show an example that describes how to use ROS with this simulator. 
-Gazebo actually works as a robot in that case so it could publish data, receive commands and act according to the commands we give in our scripts.  
+Gazebo actually works as a robot (in that example, it's `ROSbot`_, which is a differential-drive wheeled robot) in that case so it could publish data, receive commands and act according to the commands we give in our scripts.  
+
+.. _ROSbot: https://husarion.com/manuals/rosbot-manual/#ros-api
