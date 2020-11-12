@@ -230,7 +230,7 @@ Generally speaking, if you use an existing robot, you could find its model in th
 If you are building your own robot and want to simulate it in Gazebo, please look at the `tutorial`_.
 
 .. _Gazebo: http://gazebosim.org/tutorials
-.._tutorial: http://gazebosim.org/tutorials?cat=build_robot
+.. _tutorial: http://gazebosim.org/tutorials?cat=build_robot
 
 Now we will show an example that describes how to use ROS with this simulator. 
 Gazebo actually works as a robot in that case so it could publish data, receive commands and act according to the commands we give in our scripts.  
