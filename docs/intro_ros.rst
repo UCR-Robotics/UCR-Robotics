@@ -145,10 +145,11 @@ Here we will give a simple example to show how to combine ``Publisher`` with ``S
     from nav_msgs.msg import Odometry
     from geometry_msgs.msg import Twist, Pose2D
 
+
     class Bot():
         def __init__(self):
             # Initializaiton
-            N = 200
+            N = 20
             self.vel = Twist()
             self.pose = Pose2D()
 
@@ -160,6 +161,7 @@ Here we will give a simple example to show how to combine ``Publisher`` with ``S
             for i in range(N):
                 self.controller(self.pose)
                 self.rate.sleep()
+            self.shutdown()
 
 
         def controller(self, state):        
@@ -171,10 +173,21 @@ Here we will give a simple example to show how to combine ``Publisher`` with ``S
         def odom_callback(self, data):
             self.pose.x = data.pose.pose.position.x # Please check the defination of message type "Odometry" to see why we could get the content in this way.
             self.pose.y = data.pose.pose.position.y
+            
+            
+        def shutdown(self):
+            rospy.loginfo("stop")
+            stop_vel = Twist()
+            stop_vel.linear.x = 0
+            stop_vel.angular.z = 0
+            self.pub.publish(stop_vel)
 
 
     if __name__ == '__main__':
-        Bot()
+        try:
+            Bot()
+        except rospy.ROSInterruptException:
+            pass        
 
 In the script above, we show how to communicate with a robot and design a feedback controller for it using ROS. 
 Firstly, we do initialization and propagate the system in the ``__init__`` function. 
