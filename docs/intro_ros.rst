@@ -226,5 +226,11 @@ Communication with Gazebo Simulator
 -----------------------------------
 `Gazebo`_ is an open-source 3D robotics simulator. It offers the ability to accurately and efficiently simulate populations of robots in complex indoor and outdoor environments.
 You could use it for rapidly and safely testing your algorithms, designing robots and collecting or training a large amount of data using realistic scenarios. 
+Generally speaking, if you use an existing robot, you could find its model in their documents. 
+If you are building your own robot and want to simulate it in Gazebo, please look at the `tutorial`_.
 
 .. _Gazebo: http://gazebosim.org/tutorials
+.._tutorial: http://gazebosim.org/tutorials?cat=build_robot
+
+Now we will show an example that describes how to use ROS with this simulator. 
+Gazebo actually works as a robot in that case so it could publish data, receive commands and act according to the commands we give in our scripts.  
