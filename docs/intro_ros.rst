@@ -153,7 +153,7 @@ Here we will give a simple example to show how to combine ``Publisher`` with ``S
             self.vel = Twist()
             self.pose = Pose2D()
 
-            rospy.init_node('dataTracker')
+            rospy.init_node('BotControl')
             self.pub = rospy.Publisher("/cmd_vel", Twist, queue_size =10)
             rospy.Subscriber("/odom", Odometry, self.odom_callback)
             self.rate = rospy.Rate(10)
