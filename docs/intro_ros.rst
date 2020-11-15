@@ -236,3 +236,8 @@ We show an example that describes how to use ROS with Gazebo where it simulates 
 ``iLearn -> EE175A(001) Fall2020 -> YuJa -> SHARED -> All Channels -> EE_175A_001_20F -> ee175Demo_all``.
 
 .. _ROSbot: https://husarion.com/manuals/rosbot-manual/#ros-api
+
+Resources
+---------
+- Finding answers to your problems: https://answers.ros.org/questions/
+- Cheatsheets: https://github.com/ros/cheatsheet/releases/
