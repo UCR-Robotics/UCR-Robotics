@@ -31,6 +31,8 @@ The states typically includes the configuration (position) and its derivative (v
     \ddot{x}_{n}=q^{(n)}=g\left(q, \dot{q}, \ldots, q^{(n-1)}, \mathbf{u}\right)=g\left(x_{1}, x_{2}, \ldots, x_{n}, \mathbf{u}\right)
     \end{array}
 
+.. math::
+
     \left [\begin{array}{l}
     \dot{x}_{1} \\
     \dot{x}_{2} \\
