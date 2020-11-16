@@ -18,19 +18,37 @@ The states typically includes the configuration (position) and its derivative (v
 
   - Given a set of differential equations (take a single variable q(t) as an example here)
   - Isolate the n-th highest derivative, :math:`q^{(n)} = g(q,\dot{q},\dots,q^{(n-1)},\mathbf{u})`
-  - Set :math:`x_{1} = q(t)`, :math:`x_{2} = \dot{q(t)}`, :math:`\dots`, :math:`x_{n} = q^{(n-1)}(t)`.
-  - Create state vector :math:`\mathbf{x} = [x_1,x_2,\dots,x_n]^T = [q,\dot{q},\dots,q^{(n-1)}]^T`
+  - Set :math:`x_{1} = q(t)`, :math:`x_{2} = \dot{q}(t)`, :math:`\dots` , :math:`x_{n} = q^{(n-1)}(t)`.
+  - Create state vector :math:`\mathbf{x} = [x_1,x_2,\dots,x_n]^T = [q, \dot{q},\dots,q^{(n-1)}]^T`
   - Rewrite these equations into a system of coupled first-order differential equations
  
 .. math::
 
-    \begin{array}{l}
+    \left[\begin{array}{l}
     \dot{x}_{1}=\dot{q}=x_{2} \\
     \dot{x}_{2}=\ddot{q}=x_{3} \\
+    \dots \\
     \ddot{x}_{n}=q^{(n)}=g\left(q, \dot{q}, \ldots, q^{(n-1)}, \mathbf{u}\right)=g\left(x_{1}, x_{2}, \ldots, x_{n}, \mathbf{u}\right)
-    \end{array}
+    \end{array}\right]
 
+  - (optional) Rewrite in matrix form:
+ 
+.. math::
 
+    \left [\begin{array}{l}
+    \dot{x}_{1} \\
+    \dot{x}_{2} \\
+    \dots \\
+    \dot{x}_{n}
+    \end{array}\right]=
+    \left [\begin{array}{l}
+    x_{2} \\
+    x_{3} \\
+    \dots \\
+    g\left(x_{1}, x_{2}, \ldots, x_{n}, \mathbf{u}\right)
+    \end{array}\right]
+
+Now we could express the evolution of the system use n states :math:`\mathbf{x} \in R^{n}` and m inputs :math:`\mathbf{u} \in R^{m}`.
     
   
 Kinematics
