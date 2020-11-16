@@ -57,7 +57,7 @@ please see `how to contribute <contribute.html>`_.
     :hidden:
     :caption: Differential-Drive Robot
 
-    tbot/moRbt
+    tbot/turtlebot
 
 
 .. toctree::
