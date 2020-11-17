@@ -12,7 +12,12 @@ In robotic systems, this minimum number are always related to the degree of free
 The states typically includes the configuration (position) and its derivative (velocity). 
 
 .. _state-space representation: https://en.wikipedia.org/wiki/State-space_representation
-   
+
+.. image:: figures/kuboki.png
+    :width: 50%
+    
+.. image:: figures/rosbot.png
+    :width: 50%
    
 - State-Space Modelling Steps
 
@@ -29,20 +34,16 @@ The states typically includes the configuration (position) and its derivative (v
     \dot{x}_{2}=\ddot{q}=x_{3} \\
     \ddot{x}_{n}=q^{(n)}=g\left(q, \dot{q}, \ldots, q^{(n-1)}, \mathbf{u}\right)=g\left(x_{1}, x_{2}, \ldots, x_{n}, \mathbf{u}\right)
     \end{array}
-
-
     
-  
-Kinematics
-----------
-
-- Forward Kinematics: To determine robot position (x, y) and orientation (𝜃) based on wheels rotation measurements.
-
-- Inverse Kinematics
 
 Derive State-space Model for Mobile Robot
 -----------------------------------------
-
+.. image:: figures/unicycle.png
+    :width: 50%
+    
+.. image:: figures/differential.png
+    :width: 50%
+    
 - Differential drive model
 - Unicycle Model
 
