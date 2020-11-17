@@ -1,12 +1,19 @@
 Kinematics and Control for Wheeled Robots
 ====================
 
-A wheeled robot refers to that operates in contact with the ground and its movement is based on separately driven wheels placed on either side of the robot body.
+A wheeled robot (as shown in the following figures: left for kuboki and right for ROSbot) refers to that operates in contact with the ground 
+and its movement is based on separately driven wheels placed on either side of the robot body.
 It can thus change its direction by varying the relative rate of rotation of its wheels.
 Generally speaking, no matter how many wheels it has, the speed of each side will be the same value seperately. 
 So all the wheeled robot could be treated as the differential-drive robot with two wheels.
 In this tutorial, we will introduce how to do modeling and basic control ideas for wheeled robots.
 
+.. image:: figures/kuboki.png
+    :width: 50%
+    
+.. image::   figures/rosbot.png
+    :width: 50%
+    
 Review on State-space Model
 --------
 
@@ -59,6 +66,12 @@ Now we could express the evolution of the system use n states :math:`\mathbf{x} 
 Derive State-space Model for Mobile Robot
 -----------------------------------------
 
+.. image:: figures/unicycle.png
+    :width: 10%
+    
+.. image:: figures/differential.png
+    :width: 10%
+    
 - Differential drive model
 - Unicycle Model
 
