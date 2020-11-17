@@ -13,11 +13,7 @@ The states typically includes the configuration (position) and its derivative (v
 
 .. _state-space representation: https://en.wikipedia.org/wiki/State-space_representation
 
-.. image:: figures/kuboki.png
-    :width: 50%
-    
-.. image:: figures/rosbot.png
-    :width: 50%
+
    
 - State-Space Modelling Steps
 
@@ -38,11 +34,7 @@ The states typically includes the configuration (position) and its derivative (v
 
 Derive State-space Model for Mobile Robot
 -----------------------------------------
-.. image:: figures/unicycle.png
-    :width: 50%
-    
-.. image:: figures/differential.png
-    :width: 50%
+
     
 - Differential drive model
 - Unicycle Model
