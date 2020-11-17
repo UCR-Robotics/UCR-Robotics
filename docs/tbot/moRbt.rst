@@ -49,12 +49,12 @@ The states typically includes the configuration (position) and its derivative (v
 Now we could express the evolution of the system use n states :math:`\mathbf{x} \in R^{n}` and m inputs :math:`\mathbf{u} \in R^{m}`.
     
   
-Kinematics
+Reviews on Kinematics
 ----------
 
-- Forward Kinematics: To determine robot position (x, y) and orientation (𝜃) based on wheels rotation measurements.
+- Forward Kinematics: To determine robot position (x, y) and orientation (:math:`\theta`) based on wheels rotation measurements.
 
-- Inverse Kinematics
+- Inverse Kinematics: Callculate the joint coordinates (rotation measurements) to achieve the desired position and orientation.
 
 Derive State-space Model for Mobile Robot
 -----------------------------------------
