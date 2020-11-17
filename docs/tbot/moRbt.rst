@@ -1,10 +1,11 @@
-Kinematics and Control for Wheeled Robot
+Kinematics and Control for Wheeled Robots
 ====================
 
 A wheeled robot refers to that operates in contact with the ground and its movement is based on separately driven wheels placed on either side of the robot body.
 It can thus change its direction by varying the relative rate of rotation of its wheels.
 Generally speaking, no matter how many wheels it has, the speed of each side will be the same value seperately. 
-So all the wheeled robot could be modeled as the differential-drive robot with two wheels.
+So all the wheeled robot could be treated as the differential-drive robot with two wheels.
+In this tutorial, we will introduce how to do modeling and basic control ideas for wheeled robots.
 
 Review on State-space Model
 --------
@@ -54,13 +55,6 @@ The states typically includes the configuration (position) and its derivative (v
 
 Now we could express the evolution of the system use n states :math:`\mathbf{x} \in R^{n}` and m inputs :math:`\mathbf{u} \in R^{m}`.
     
-  
-Reviews on Kinematics
-----------
-
-- Forward Kinematics: To determine robot position (x, y) and orientation (:math:`\theta`) based on wheels rotation measurements.
-
-- Inverse Kinematics: Callculate the joint coordinates (rotation measurements) to achieve the desired position and orientation.
 
 Derive State-space Model for Mobile Robot
 -----------------------------------------
@@ -69,6 +63,7 @@ Derive State-space Model for Mobile Robot
 - Unicycle Model
 
 PID Controller
+--------------
 
   
  
