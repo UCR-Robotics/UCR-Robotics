@@ -7,12 +7,7 @@ It can thus change its direction by varying the relative rate of rotation of its
 Generally speaking, no matter how many wheels it has, the speed of each side will be the same value seperately. 
 So all the wheeled robot could be treated as the differential-drive robot with two wheels.
 In this tutorial, we will introduce how to do modeling and basic control ideas for wheeled robots.
-
-.. image:: figures/kuboki.png
-    :width: 50%
-    
-.. image::   figures/rosbot.png
-    :width: 50%
+  
     
 Review on State-space Model
 --------
@@ -38,7 +33,7 @@ The states typically includes the configuration (position) and its derivative (v
  
 .. math::
 
-    \begin{array}{l}
+    \begin{array}{c}
     \dot{x}_{1}=\dot{q}=x_{2} \\
     \dot{x}_{2}=\ddot{q}=x_{3} \\
     \dots \\
@@ -47,7 +42,7 @@ The states typically includes the configuration (position) and its derivative (v
 
 .. math::
 
-    \left [\begin{array}{l}
+    \left [\begin{array}{c}
     \dot{x}_{1} \\
     \dot{x}_{2} \\
     \dots \\
@@ -69,11 +64,79 @@ Derive State-space Model for Mobile Robot
 .. image:: figures/unicycle.png
     :width: 10%
     
+When we think the robot as having only one wheel (or being only a simple point), we could get the unicycle model as shown in the figure. 
+The states x, y are position of the centroid of the robot and :math:`\theta` is the heading angle.
+Thus in the global coordinate frame, we can represent the state-space model of the unicycle robot as: 
+    
+.. math::
+
+    \left [\begin{array}{c}
+    \dot{x} \\
+    \dot{y} \\
+    \dot{\theta}
+    \end{array}\right]=
+    \left [\begin{array}{c}
+    V\cos{\theta} \\
+    V\sin{\theta} \\
+    \omega
+    \end{array}\right]    
+
+This kind of modelling doesn't include the details of the original robot (e.g., how many wheels it has, what's the size of the robot, ect.), 
+while it is simple and suitable for designing controller. 
+The unicycle model describes how the states of a wheeled robot (x, y, :math:`\theta`) are propagating over time with the inputs (linear velocity V and angular velocity :math:`\omega`).
+
+The unicycle model is enough when you want to simulate and test your control algorithm in a wheeled robot system,
+while if you are designing your own physical robot and want to know the true inputs to wheels, you will need the differential-drive robot.
+
 .. image:: figures/differential.png
     :width: 10%
     
-- Differential drive model
-- Unicycle Model
+The differential-drive is a two-wheeled drive system with independent actuators. 
+Two drive wheels are usually placed on each side of the robot and towarding the front is treated as positive direction.
+It has the same states (x, y, :math:`\theta`) as the unicycle model while its inputs are the velocity of the left (:math:`v_l`) and right (:math:`v_r`) wheels.
+To go from the unicycle model to the differential-drive model, we will show how to relate these two sets of inputs.
+
+- Firstly, recall that the kinematics of directional drive systems gives us the forward and rotational displace ment of the robot within a short time interval based on the displacement of the left and right wheels. Note that :math:`v_l` and :math:`v_r` have units of radians/second, so the linear velovity of each wheel are obtained by multipling by the radius of wheels R as :math:`v_l R` and :math:`v_r R`. Then the forward velocity V is calculated as the average of the wheel velocities
+
+.. math::
+
+    V = \frac{R}{2}(v_r+r_l)
+
+- The rotational velocity is the difference of the wheel velocities divided by the radius of rotation. In robotics literature, the radius of rotation is L, or the distance between the wheels. One way to think of this is to consider the case when the left wheel is stopped while the right wheel moves forward. The robot will rotate about the left wheel making an arc with radius of L. So the angular velocity could be expressed as
+
+.. math::
+
+    \omega = \frac{R}{L}(v_r-r_l)
+    
+Thus, the differential-drive model is:
+
+.. math::
+
+    \left [\begin{array}{c}
+    \dot{x} \\
+    \dot{y} \\
+    \dot{\theta}
+    \end{array}\right]=
+    \left [\begin{array}{c}
+    \frac{R}{2}(v_r+r_l)\cos{\theta} \\
+    \frac{R}{2}(v_r+r_l)\sin{\theta} \\
+    \frac{R}{L}(v_r-r_l)
+    \end{array}\right]    
+
+As aforementioned, when the velocities of wheels in one side are same, we could model the system as a two-wheel differential-drive robot no matter how many wheels are in one side. 
+For that case, we could create one virtual wheel to replace all the wheels in one side. 
+Its radius R is calculated as the distance between origin of the farthest wheel and center of the side as the `example`_ shown as follows.
+
+.. image:: figures/rosbot.png
+   :width: 10%
+   
+.. _example: https://husarion.com/tutorials/ros-tutorials/3-simple-kinematics-for-mobile-robot/
+
+There are still some other cases that some wheels are only for support.
+
+.. image:: figures/kuboki.png
+   :width: 10%  
+
 
 PID Controller
 --------------
