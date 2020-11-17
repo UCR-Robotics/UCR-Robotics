@@ -1,5 +1,11 @@
-Kinematics and Control for Moblie Robot
+Kinematics and Control for Wheeled Robot
 ====================
+
+A wheeled robot refers to that operates in contact with the ground and its movement is based on separately driven wheels placed on either side of the robot body.
+It can thus change its direction by varying the relative rate of rotation of its wheels.
+Generally speaking, no matter how many wheels it has, the speed of each side will be the same value seperately. 
+So all the wheeled robot could be modeled as the differential-drive robot with two wheels.
+
 Review on State-space Model
 --------
 
