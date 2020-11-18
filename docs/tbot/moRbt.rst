@@ -126,14 +126,14 @@ For that case, we could create one virtual wheel to replace all the wheels on on
 Its radius :math:`R` is calculated as the distance between origin of the farthest wheel and center of the side as the `example`_ shown as follows.
 
 .. image:: figures/rosbot.png
-   :width: 80%
+   :width: 50%
    
 .. _example: https://husarion.com/tutorials/ros-tutorials/3-simple-kinematics-for-mobile-robot/
 
 There are still some other cases that some wheels are only for support.
 
 .. image:: figures/kuboki.png
-   :width: 80%  
+   :width: 50%  
 
 Control of the Wheeled Robots
 -----------------------------
@@ -143,9 +143,6 @@ Control of the Wheeled Robots
 Control systems attempt to influence the state of a system towards a desired configuration. 
 A basic idea of it is to compare the desired trajectory with the measured outputs (states) and make corresponding corrections.
 Those control methods which will utilize the current measurements for correction are called closed-loop control (or feedback control) as shown in the following figure.
-
-.. image:: figures/control.png
-    :width: 80%
 
   - The state, or output of the system is :math:`\mathbf{x}`. The state of the system depends on its previous state, the stimulus applied to the actuators and the physics of the robot’s environment.
 
@@ -158,11 +155,17 @@ Those control methods which will utilize the current measurements for correction
   - The output of the controller is the control Signal :math:`u`, which is the stimulus to the system.
 
   - The dynamics of the system is called the system plant.
-  
+
+.. image:: figures/control.png
+    :width: 80%
+
+
+
+
 The procedure applied in the differential-drive robots are shown as follows. 
 
 .. image:: figures/controlDD.png
-    :width: 80%
+    :width: 100%
     
 Here we explain the variable and extend the block for "robot". 
 The inputs of the robot depends on your controller while the motor will "translate" your designed velocity to voltage and (or) current.
@@ -175,12 +178,13 @@ It helps the robot to follow the desired trajectory by minimizing the error.
 The details and programming tips for PID are listed in: https://ucr-ee144.readthedocs.io/en/latest/lab3.html .
 Please read it carefully and here we will introduce some tips on tuning the parameters :math:`K_D`, :math:`K_P`, :math:`K_I`.
 
-  - Criterion
+  - Criterion: the criterion for choosing the parameters are shown as follows. The other figure shows how to obtain these criterion when you give inputs to drive the system achieving the desired point.
   
   .. image:: figures/criterion.png
     :width: 80%
     
-  
+  .. image:: figures/response.png
+    :width: 80%  
   
   - Ziegler-Nichols Method for tuning
   
