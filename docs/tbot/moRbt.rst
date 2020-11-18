@@ -140,24 +140,24 @@ Control of the Wheeled Robots
 
 - Feedback control
 
-Control system attempts to influence the state of a system towards a desired configuration. 
-A basic idea of it is to compare the desired trajectory with the measured outputs (states) and make corrsponding corrections.
+Control systems attempt to influence the state of a system towards a desired configuration. 
+A basic idea of it is to compare the desired trajectory with the measured outputs (states) and make corresponding corrections.
 Those control methods which will utilize the current measurements for correction are called closed-loop control (or feedback control) as shown in the following figure.
 
 .. image:: figures/control.png
     :width: 80%
 
-  - The state, or outout of the system is :math:`\mathbf{x}`. The state of the system depends on its previous state, the stimulus applied to the actuators and the physics of the robot’s environment.
+  - The state, or output of the system is :math:`\mathbf{x}`. The state of the system depends on its previous state, the stimulus applied to the actuators and the physics of the robot’s environment.
 
   - We can not determine :math:`\mathbf{x}` exactly, but can estimate it using sensors. We hope that our sensors are good enough to reasonably estimate what the robot actually does and the "state estimation" is another direction of research.
 
   - The desired set point, also called a reference, is :math:`r`.
 
-  - The error between the reference and estimated system state is :math:`e`, which is the input to controller.
+  - The error between the reference and estimated system state is :math:`e`, which is the input to the controller.
 
   - The output of the controller is the control Signal :math:`u`, which is the stimulus to the system.
 
-  - The dynamics of the system is the called the system plant.
+  - The dynamics of the system is called the system plant.
   
 The procedure applied in the differential-drive robots are shown as follows. 
 
@@ -165,14 +165,14 @@ The procedure applied in the differential-drive robots are shown as follows.
     :width: 80%
     
 Here we explain the variable and extend the block for "robot". 
-The inputs of robot is depends on your controller while the motor will "translate" your designed velocity to voltage and (or) current.
-Then the power is given to actuator to drive your robot.
+The inputs of the robot depends on your controller while the motor will "translate" your designed velocity to voltage and (or) current.
+Then the power is given to the actuator to drive your robot.
 
 - PID Controller
 
 The Proportional-Integral-Deritive (PID) controller is the most frequently-used feedback controller.
 It helps the robot to follow the desired trajectory by minimizing the error. 
-The details and programming tips for PID are list in: https://ucr-ee144.readthedocs.io/en/latest/lab3.html .
+The details and programming tips for PID are listed in: https://ucr-ee144.readthedocs.io/en/latest/lab3.html .
 Please read it carefully and here we will introduce some tips on tuning the parameters :math:`K_D`, :math:`K_P`, :math:`K_I`.
 
   - Criterion
@@ -193,7 +193,7 @@ Please read it carefully and here we will introduce some tips on tuning the para
     4) Set gains according to the following table
     
     .. image:: figures/parameter.png
-    :width: 50%
+      :width: 50%
 
 
 
