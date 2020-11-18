@@ -85,7 +85,7 @@ This kind of modelling doesn't include the details of the original robot (e.g., 
 while it is simple and suitable for designing controllers. 
 
 .. image:: figures/differential.png
-    :width: 80%
+    :width: 90%
     
 When you want to simulate and test your control algorithm in a wheeled robot system, the model is enough.
 While if you are designing your own physical robot and want to know the true inputs to wheels, you will need the differential-drive robot.    
@@ -126,14 +126,14 @@ For that case, we could create one virtual wheel to replace all the wheels on on
 Its radius :math:`R` is calculated as the distance between origin of the farthest wheel and center of the side as the `example`_ shown as follows.
 
 .. image:: figures/rosbot.png
-   :width: 100%
+   :width: 80%
    
 .. _example: https://husarion.com/tutorials/ros-tutorials/3-simple-kinematics-for-mobile-robot/
 
 There are still some other cases that some wheels are only for support.
 
 .. image:: figures/kuboki.png
-   :width: 100%  
+   :width: 80%  
 
 
 PID Controller
