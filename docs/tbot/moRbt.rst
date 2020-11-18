@@ -64,7 +64,7 @@ Derive State-space Model for Mobile Robot
     :width: 80%
     
 When we treat the robot as having only one wheel (or being only a simple point), we could get the unicycle model as shown in the figure. 
-The states x, y are position of the centroid of the robot and :math:`\theta` is the heading angle.
+The states :math:`x`, :math:`y` are position of the centroid of the robot and :math:`\theta` is the heading angle.
 Thus in the global coordinate frame, we can represent the state-space model of the unicycle robot as: 
     
 .. math::
@@ -80,7 +80,7 @@ Thus in the global coordinate frame, we can represent the state-space model of t
     \omega
     \end{array}\right]    
 
-It describes how the states of a wheeled robot (x, y, :math:`\theta`) are propagating over time with the inputs (linear velocity V and angular velocity :math:`\omega`).
+It describes how the states of a wheeled robot (:math:`x`, :math:`y`, :math:`\theta`) are propagating over time with the inputs (linear velocity V and angular velocity :math:`\omega`).
 This kind of modelling doesn't include the details of the original robot (e.g., how many wheels it has, what's the size of the robot, ect.), 
 while it is simple and suitable for designing controllers. 
 
@@ -91,7 +91,7 @@ When you want to simulate and test your control algorithm in a wheeled robot sys
 While if you are designing your own physical robot and want to know the true inputs to wheels, you will need the differential-drive robot.    
 The differential-drive is a two-wheeled drive system with independent actuators. 
 Two drive wheels are usually placed on each side of the robot and towarding the front is treated as the positive direction.
-It has the same states (x, y, :math:`\theta`) as the unicycle model while its inputs are the velocity of the left (:math:`v_l`) and right (:math:`v_r`) wheels.
+It has the same states (:math:`x`, :math:`y`, :math:`\theta`) as the unicycle model while its inputs are the velocity of the left (:math:`v_l`) and right (:math:`v_r`) wheels.
 To go from the unicycle model to the differential-drive model, we will show how to relate these two sets of inputs.
 
 - Firstly, recall that the kinematics of directional drive systems gives us the forward and rotational displacement of the robot within a short time interval based on the displacement of the left and right wheels. Note that :math:`v_l` and :math:`v_r` have units of radians/second, so the linear velocity of each wheel are obtained by multiplying by the radius of wheels :math:`R` as :math:`R v_l` and :math:`R v_r`. Then the forward velocity V is calculated as the average of the wheel velocities
@@ -135,9 +135,69 @@ There are still some other cases that some wheels are only for support.
 .. image:: figures/kuboki.png
    :width: 80%  
 
+Control of the Wheeled Robots
+-----------------------------
 
-PID Controller
---------------
+- Feedback control
+
+Control system attempts to influence the state of a system towards a desired configuration. 
+A basic idea of it is to compare the desired trajectory with the measured outputs (states) and make corrsponding corrections.
+Those control methods which will utilize the current measurements for correction are called closed-loop control (or feedback control) as shown in the following figure.
+
+.. image:: figures/control.png
+    :width: 80%
+
+  - The state, or outout of the system is :math:`\mathbf{x}`. The state of the system depends on its previous state, the stimulus applied to the actuators and the physics of the robot’s environment.
+
+  - We can not determine :math:`\mathbf{x}` exactly, but can estimate it using sensors. We hope that our sensors are good enough to reasonably estimate what the robot actually does and the "state estimation" is another direction of research.
+
+  - The desired set point, also called a reference, is :math:`r`.
+
+  - The error between the reference and estimated system state is :math:`e`, which is the input to controller.
+
+  - The output of the controller is the control Signal :math:`u`, which is the stimulus to the system.
+
+  - The dynamics of the system is the called the system plant.
+  
+The procedure applied in the differential-drive robots are shown as follows. 
+
+.. image:: figures/controlDD.png
+    :width: 80%
+    
+Here we explain the variable and extend the block for "robot". 
+The inputs of robot is depends on your controller while the motor will "translate" your designed velocity to voltage and (or) current.
+Then the power is given to actuator to drive your robot.
+
+- PID Controller
+
+The Proportional-Integral-Deritive (PID) controller is the most frequently-used feedback controller.
+It helps the robot to follow the desired trajectory by minimizing the error. 
+The details and programming tips for PID are list in: https://ucr-ee144.readthedocs.io/en/latest/lab3.html .
+Please read it carefully and here we will introduce some tips on tuning the parameters :math:`K_D`, :math:`K_P`, :math:`K_I`.
+
+  - Criterion
+  
+  .. image:: figures/criterion.png
+    :width: 80%
+    
+  
+  
+  - Ziegler-Nichols Method for tuning
+  
+    1) Set :math:`K_D = K_I = 0`
+    
+    2) Increase :math:`K_P` until ultimate gain :math:`K_u` where system starts to oscillate
+    
+    3) Find oscillation period :math:`T_u` at :math:`K_u`
+    
+    4) Set gains according to the following table
+    
+    .. image:: figures/parameter.png
+    :width: 50%
+
+
+
+
 
   
  
