@@ -24,7 +24,7 @@ The states typically include the configuration (position) and its derivative (ve
    
 - State-Space Modelling Steps
 
-  - Given a set of differential equations (take a single variable q(t) as an example here)
+  - Given a set of differential equations (take a single variable :math:`q(t)` as an example here)
   - Isolate the n-th highest derivative, :math:`q^{(n)} = g(q,\dot{q},\dots,q^{(n-1)},\mathbf{u})`
   - Set :math:`x_{1} = q(t)`, :math:`x_{2} = \dot{q}(t)`, :math:`\dots` , :math:`x_{n} = q^{(n-1)}(t)`.
   - Create state vector :math:`\mathbf{x} = [x_1,x_2,\dots,x_n]^T = [q, \dot{q},\dots,q^{(n-1)}]^T`
@@ -57,7 +57,7 @@ The states typically include the configuration (position) and its derivative (ve
 Now we could express the evolution of the system use :math:`n` states :math:`\mathbf{x} \in R^{n}` and :math:`m` inputs :math:`\mathbf{u} \in R^{m}`.
     
 
-Derive State-space Model for Mobile Robot
+State-space Model for Mobile Robot
 -----------------------------------------
 
 .. image:: figures/unicycle.png
@@ -94,7 +94,7 @@ Two drive wheels are usually placed on each side of the robot and towarding the 
 It has the same states (:math:`x`, :math:`y`, :math:`\theta`) as the unicycle model while its inputs are the velocity of the left (:math:`v_l`) and right (:math:`v_r`) wheels.
 To go from the unicycle model to the differential-drive model, we will show how to relate these two sets of inputs.
 
-- Firstly, recall that the kinematics of directional drive systems gives us the forward and rotational displacement of the robot within a short time interval based on the displacement of the left and right wheels. Note that :math:`v_l` and :math:`v_r` have units of radians/second, so the linear velocity of each wheel are obtained by multiplying by the radius of wheels :math:`R` as :math:`R v_l` and :math:`R v_r`. Then the forward velocity V is calculated as the average of the wheel velocities
+- Firstly, note that :math:`v_l` and :math:`v_r` have units of radians/second, so the linear velocity of each wheel are obtained by multiplying by the radius of wheels :math:`R` as :math:`R v_l` and :math:`R v_r`. Then recall that the kinematics of directional drive systems gives us the forward and rotational displacement of the robot within a short time interval based on the displacement of the left and right wheels. The forward velocity V is calculated as the average of the wheel velocities
 
 .. math::
 
@@ -130,7 +130,7 @@ Its radius :math:`R` is calculated as the distance between origin of the farthes
    
 .. _example: https://husarion.com/tutorials/ros-tutorials/3-simple-kinematics-for-mobile-robot/
 
-There are still some other cases that some wheels are only for support.
+There are other cases that some wheels are only for support.
 
 .. image:: figures/kuboki.png
    :width: 50%  
