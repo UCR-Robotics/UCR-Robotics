@@ -178,7 +178,7 @@ It helps the robot to follow the desired trajectory by minimizing the error.
 The details and programming tips for PID are listed in: https://ucr-ee144.readthedocs.io/en/latest/lab3.html .
 Please read it carefully and here we will introduce some tips on tuning the parameters :math:`K_D`, :math:`K_P`, :math:`K_I`.
 
-  - Criterion: the criterion for choosing the parameters are shown as follows. The other figure shows how to obtain these criterion when you give inputs to drive the system achieving the desired point.
+  - Criterion: the criterion for choosing the parameters are shown as follows. The other figure shows how to obtain these criteria when you give inputs to drive the system achieving the desired point.
   
   .. image:: figures/criterion.png
     :width: 80%
