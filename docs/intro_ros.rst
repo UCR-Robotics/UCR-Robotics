@@ -114,14 +114,14 @@ Writing a Subscriber in Python
         rospy.loginfo(data.data) # Please consider why ".data" gives the content of "String"
  
  
-    def talker():
+    def listener():
         rospy.init_node('listener')
         rospy.Subscriber('chatter', String, callback)
         rospy.spin()
 
 
     if __name__ == '__main__':
-        talker()
+        listener()
 
 - Declare a subscriber that your node ``listener`` will subscribe to messages from the topic ``chatter``. The format of the message is defined as ``String`` and the received data are stored in the ``callback`` function. spin() keeps python from exiting until this node is stopped
 
