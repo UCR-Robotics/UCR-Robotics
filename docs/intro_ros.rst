@@ -121,7 +121,7 @@ Writing a Subscriber in Python
 
 
     if __name__ == '__main__':
-        listener()
+        talker()
 
 - Declare a subscriber that your node ``listener`` will subscribe to messages from the topic ``chatter``. The format of the message is defined as ``String`` and the received data are stored in the ``callback`` function. spin() keeps python from exiting until this node is stopped
 
