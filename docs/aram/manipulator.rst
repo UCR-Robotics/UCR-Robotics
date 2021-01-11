@@ -6,9 +6,9 @@ Overview
 The ReactorX 150 Robot Arm belongs to a new family of arms from interbotix. 
 It equips with 4 links, 4 joints and a gripper. 
 The arm has a 45cm horizontal reach from center of the base to gripper with a total span of 90cm.
-The wokring payload for it is 100g and more information could be found at `ReaxtorX 150 Manipulator`_.
+The working payload for it is 100g and more information could be found at `ReactorX 150 Manipulator`_.
 
-.. _ReaxtorX 150 Manipulator: https://www.trossenrobotics.com/reactorx-150-robot-arm.aspx
+.. _ReactorX 150 Manipulator: https://www.trossenrobotics.com/reactorx-150-robot-arm.aspx
 
 We could easily communicate with the ReactorX 150 Robot Arm via ROS and required ROS packages could be downloaded from `intebotix_ros_arm`_.
 
@@ -17,7 +17,7 @@ We could easily communicate with the ReactorX 150 Robot Arm via ROS and required
     
 The relation among the four core packages in the repo could be illustrated in the figure.
 Firstly, ``interbotix_descriptions`` contains the files to describe (define or create) the model of this specific robot arm in simulators (e.g., Gazebo).
-Then together with the model information, ``interbotix_gazebo`` includes config flies and complete the process to launch the robot arm in Gazebo.
+Then together with the model information, ``interbotix_gazebo`` includes config files and completes the process to launch the robot arm in Gazebo.
 So you could simulate the robot arm using these two packages.
 On the other hand, ``interbotix_sdk`` is responsible for driving the physical robot.
 Finally, ``interbotix_moveit`` builds on top of the ``interbotix_descriptions``, ``interbotix_gazebo`` and ``interbotix_sdk`` packages.
@@ -68,7 +68,7 @@ Using Moveit to Achieve a Desired Arm/Gripper Pose
 
 As we mentioned in the intro, `Moveit`_ is a tool to generate a smooth trajectory for the robot arm achieving a desired pose.
 The `intebotix_ros_arm`_ provides you the interface, so you could utilize Moveit in either Gazebo, actual robot or a fake robot created by RViz.
-Here we will introduce on how to move the robot arm/gripper in Gazebo.
+Here we will introduce how to move the robot arm/gripper in Gazebo.
 
 .. _Moveit: http://docs.ros.org/en/kinetic/api/moveit_tutorials/html/index.html
 
@@ -82,13 +82,13 @@ Here we will introduce on how to move the robot arm/gripper in Gazebo.
 You could also open a terminal and run ``rosservice call /gazebo/unpause_physics`` to achieve it.
 Then you will see the robot arm in RViz (the visualization software used in ROS).
 
-3. Once the RViz starts, you could see two panels. 
+3. Once the RViz starts, you can see two panels. 
   
   - If you want to control the robot arm,  
     firstly on the top left panel, go to ``MotionPlanning`` -> ``Planning Request`` -> ``Planning Group``
     and choose the group ``interbotix_arm``. On the same panel, go to ``Query Goal State`` and check this box. 
     Then you can drag the "ball" on the tip of the robot arm to your desired arm pose. 
-    Once a goal pose is set, in the bottom left panel, go to "Planning" tab and try buttons ``Plan``, ``Execute``, or ``Plan and Execute``. 
+    Once a goal pose is set, in the bottom left panel, go to the "Planning" tab and try buttons ``Plan``, ``Execute``, or ``Plan and Execute``. 
     The software will figure out a path for the arm to follow and reach the exact goal pose you just set.
 
   - If you want to move the gripper, go to ``MotionPlanning`` -> ``Planning Request`` -> ``Planning Group``
@@ -96,7 +96,7 @@ Then you will see the robot arm in RViz (the visualization software used in ROS)
     There are a few saved poses for the "gripper" group, e.g., open, close, home, etc.
     So you could select the start as well as the goal states from these saved poses.
     On the bottom left panel ("MotionPLanning"), go to ``Planning`` -> ``Query`` and choose the initial and desired pose.
-    Don't forget to click on ``update`` once you made a new selection.
+    Don't forget to click on ``update`` once you make a new selection.
     Finally, click on ``Plan and Execute``, you will see the gripper moves.
 
 4. Now, you can take a look at Gazebo and you will find the robot is at the states
@@ -105,26 +105,28 @@ you just set in RViz.
 Access to Lab and Lab Safety
 ----------------------------
 
-We put some `ReaxtorX 150 Manipulator`_ robots in WCH 128. 
-So to use them, you just need to follow the regular procedure required by campus to access to the lab room.
+We put some `ReactorX 150 Manipulator`_ robots in WCH 128. 
+So to use them, you just need to follow the regular procedure required by campus to access the lab room.
 That is:
 
-1) Enter your names for particular days/times in the Google Drive room reservation file
-https://docs.google.com/spreadsheets/d/19ZxRzmm3Tmzi93cMewLDc0Fjmm24Ri7Q . 
+1) Enter your names for particular days/times in the Google Drive `room reservation`_ file. 
 Please make sure there are no more than 6 students having the same reservation.
 
-2) Before you actually head to the lab room, please complete the symptom survey first.
-https://ucriverside.az1.qualtrics.com/jfe/form/SV_cOB8gBU6OVulQax .
+.. _room reservation: https://docs.google.com/spreadsheets/d/19ZxRzmm3Tmzi93cMewLDc0Fjmm24Ri7Q
+
+2) Before you actually head to the lab room, please complete the `symptom survey`_ first.
+
+.. _symptom survey: https://ucriverside.az1.qualtrics.com/jfe/form/SV_cOB8gBU6OVulQax 
 
 3) If that's your first time to use the arm, please contact TA to be assigned to a robot arm.
 Then in the following quarter, you will be responsible for that robot and you could use it anytime as long as you get the approval to the lab room.
 
 4) When you are at the room, you should scan the 2-D QR code at the door and when you are leaving,
-you also need to scan the QR code to complete you visit.
+you also need to scan the QR code to complete your visit.
 
 5) Note that whenever a lab is used, its work area, instruments and accessories should be completely cleaned, wiped and disinfected.
 The lab provides all necessary wipes, solutions and disinfectants, 
-so when you are at lab please wash/wipe you hands often, disinfect anything you touch and use,
+so when you are at lab please wash/wipe your hands often, disinfect anything you touch and use,
 wear masks, keep safe distaning and take all other precautions to prevent the spread of the virus.
 
 Finally, keep in mind that: YOU SAFETY IS THE MOST IMPORTANT THING!
@@ -132,7 +134,7 @@ Finally, keep in mind that: YOU SAFETY IS THE MOST IMPORTANT THING!
 Hardware Setup
 --------------
 
-The most of the setup of the robot arm is ready. You just need to power it and connect it to your laptop.
+Most of the setup of the robot arm is ready. You just need to power it and connect it to your laptop.
 
 1) Remove the robot arm from its package and place it on a sturdy and flat surface.
 Also make sure that there are no obstacles within the workspace of the arm or turret.
@@ -171,18 +173,18 @@ Once you move the robot manually to your desired initial pose, hold it and run
 
 2) Now you could play with Moveit on your laptop to plan the trajectory (e.g., "home" state as shown) as aforementioned.
 Just note to avoid collisions when you set the goal states and during the planning.
-(You could run ``plan`` to see how it will performs and then ``Execute``). 
+(You could run ``plan`` to see how it will perform and then ``Execute``). 
 
 .. image:: figures/home.jpeg
     :width: 50%
 
-3) The current arm is not equipped with gripper fingers so you could attach any kinds of it for your project.
-We provide one type of the fingers in the box. You can easily equipped it in the way as shown in the figures.
+3) The current arm is not equipped with gripper fingers so you could attach any kind of it for your project.
+We provide one type of the fingers in the box. You can easily equip it in the way as shown in the figures.
 
 .. image:: figures/gripper.jpeg
     :width: 40%
 
-4) When you are done your work, please put the arm back safely for further use. 
+4) When you are done with your work, please put the arm back safely for further use. 
 Firstly, run ``$ rosservice call /rx150/torque_joints_off`` to torque off the motors, 
 please be very careful as the arm will collapse once you run the command. 
 So you should hold the arm manually before it falls down.
