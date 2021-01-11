@@ -13,7 +13,7 @@ The working payload for it is 100g and more information could be found at `React
 We could easily communicate with the ReactorX 150 Robot Arm via ROS and required ROS packages could be downloaded from `intebotix_ros_arm`_.
 
 .. image:: figures/overview.png
-    :width: 40%
+    :width: 60%
     
 The relation among the four core packages in the repo could be illustrated in the figure.
 Firstly, ``interbotix_descriptions`` contains the files to describe (define or create) the model of this specific robot arm in simulators (e.g., Gazebo).
@@ -112,11 +112,7 @@ That is:
 1) Enter your names for particular days/times in the Google Drive `room reservation`_ file. 
 Please make sure there are no more than 6 students having the same reservation.
 
-.. _room reservation: https://docs.google.com/spreadsheets/d/19ZxRzmm3Tmzi93cMewLDc0Fjmm24Ri7Q
-
 2) Before you actually head to the lab room, please complete the `symptom survey`_ first.
-
-.. _symptom survey: https://ucriverside.az1.qualtrics.com/jfe/form/SV_cOB8gBU6OVulQax 
 
 3) If that's your first time to use the arm, please contact TA to be assigned to a robot arm.
 Then in the following quarter, you will be responsible for that robot and you could use it anytime as long as you get the approval to the lab room.
@@ -130,6 +126,9 @@ so when you are at lab please wash/wipe your hands often, disinfect anything you
 wear masks, keep safe distaning and take all other precautions to prevent the spread of the virus.
 
 Finally, keep in mind that: YOU SAFETY IS THE MOST IMPORTANT THING!
+
+.. _room reservation: https://docs.google.com/spreadsheets/d/19ZxRzmm3Tmzi93cMewLDc0Fjmm24Ri7Q
+.. _symptom survey: https://ucriverside.az1.qualtrics.com/jfe/form/SV_cOB8gBU6OVulQax 
 
 Hardware Setup
 --------------
