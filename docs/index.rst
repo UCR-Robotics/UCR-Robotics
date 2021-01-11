@@ -47,9 +47,9 @@ please see `how to contribute <contribute.html>`_.
 .. toctree::
     :maxdepth: 2
     :hidden:
-    :caption: ReactorX 150 Manipulator
+    :caption: Manipulator
 
-    rarm/manipulator
+    aram/manipulator
 
 
 .. toctree::
