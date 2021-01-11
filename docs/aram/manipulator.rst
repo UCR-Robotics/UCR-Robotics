@@ -11,6 +11,10 @@ The wokring payload for it is 100g and more information could be found at `Reaxt
 .. _ReaxtorX 150 Manipulator: https://www.trossenrobotics.com/reactorx-150-robot-arm.aspx
 
 We could easily communicate with the ReactorX 150 Robot Arm via ROS and required ROS packages could be downloaded from `intebotix_ros_arm`_.
+
+.. image:: figures/overview.png
+    :width: 40%
+    
 The relation among the four core packages in the repo could be illustrated in the figure.
 Firstly, ``interbotix_descriptions`` contains the files to describe (define or create) the model of this specific robot arm in simulators (e.g., Gazebo).
 Then together with the model information, ``interbotix_gazebo`` includes config flies and complete the process to launch the robot arm in Gazebo.
