@@ -47,6 +47,14 @@ please see `how to contribute <contribute.html>`_.
 .. toctree::
     :maxdepth: 2
     :hidden:
+    :caption: ReactorX 150 Manipulator
+
+    rarm/manipulator
+
+
+.. toctree::
+    :maxdepth: 2
+    :hidden:
     :caption: Introduction to ROS
 
     intro_ros
