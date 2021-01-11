@@ -125,7 +125,7 @@ The lab provides all necessary wipes, solutions and disinfectants,
 so when you are at lab please wash/wipe your hands often, disinfect anything you touch and use,
 wear masks, keep safe distaning and take all other precautions to prevent the spread of the virus.
 
-Finally, keep in mind that: YOU SAFETY IS THE MOST IMPORTANT THING!
+Finally, keep in mind that: YOUR SAFETY IS THE MOST IMPORTANT THING!
 
 .. _room reservation: https://docs.google.com/spreadsheets/d/19ZxRzmm3Tmzi93cMewLDc0Fjmm24Ri7Q
 .. _symptom survey: https://ucriverside.az1.qualtrics.com/jfe/form/SV_cOB8gBU6OVulQax 
@@ -193,5 +193,5 @@ Finally, shut down (ctrl C) your launch process and unplug the power cords.
 .. image:: figures/origin.jpeg
     :width: 50%
 
-YOU SAFETY IS THE MOST IMPORTANT THING. Please stay safe and have fun with the robots~
+YOUR SAFETY IS THE MOST IMPORTANT THING. Please stay safe and have fun with the robots!
 
