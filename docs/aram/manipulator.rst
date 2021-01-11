@@ -122,8 +122,8 @@ you also need to scan the QR code to complete your visit.
 
 5) Note that whenever a lab is used, its work area, instruments and accessories should be completely cleaned, wiped and disinfected.
 The lab provides all necessary wipes, solutions and disinfectants, 
-so when you are at lab please wash/wipe your hands often, disinfect anything you touch and use,
-wear masks, keep safe distaning and take all other precautions to prevent the spread of the virus.
+so when you are at the lab please wash/wipe your hands often, disinfect anything you touch and use,
+wear masks, keep safe distancing and take all other precautions to prevent the spread of the virus.
 
 Finally, keep in mind that: YOUR SAFETY IS THE MOST IMPORTANT THING!
 
