@@ -98,13 +98,13 @@ To go from the unicycle model to the differential-drive model, we will show how 
 
 .. math::
 
-    V = \frac{R}{2}(v_r+r_l)
+    V = \frac{R}{2}(v_r+v_l)
 
 - The rotational velocity is the difference of the wheel velocities divided by the radius of rotation. In robotics literature, the radius of rotation is :math:`L`, or the distance between the wheels. One way to think of this is to consider the case when the left wheel is stopped while the right wheel moves forward. The robot will rotate about the left wheel making an arc with radius of :math:`L`. So the angular velocity could be expressed as
 
 .. math::
 
-    \omega = \frac{R}{L}(v_r-r_l)
+    \omega = \frac{R}{L}(v_r-v_l)
     
 Thus, the differential-drive model is:
 
@@ -116,9 +116,9 @@ Thus, the differential-drive model is:
     \dot{\theta}
     \end{array}\right]=
     \left [\begin{array}{c}
-    \frac{R}{2}(v_r+r_l)\cos{\theta} \\
-    \frac{R}{2}(v_r+r_l)\sin{\theta} \\
-    \frac{R}{L}(v_r-r_l)
+    \frac{R}{2}(v_r+v_l)\cos{\theta} \\
+    \frac{R}{2}(v_r+v_l)\sin{\theta} \\
+    \frac{R}{L}(v_r-v_l)
     \end{array}\right]    
 
 As aforementioned, when the velocities of wheels on one side are the same, we could model the system as a two-wheel differential-drive robot no matter how many wheels it has.
