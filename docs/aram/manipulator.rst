@@ -139,9 +139,19 @@ Most of the setup of the robot arm is ready. You just need to power it and conne
 Also make sure that there are no obstacles within the workspace of the arm or turret.
 
 2) Plug the 12V power cable into an outlet and insert the barrel plug into the barrel jack on the X-series power hub.
-Then plug the micro-usb cable into your computer and the other side into the U2D2. 
+Then plug the micro-usb cable into the U2D2.
+While don't plug in the other side to your laptop now.
 Both of the two ports are located under the see-through acrylic on the base of the robot.
-Now you should see the LEDs flash red as shown in the following figures.
+
+Copy over the udev rules to the right directory so your laptop (or the VMware) could recognize the U2D2.
+
+.. code-block:: bash
+
+    $ sudo cp ~/catkin_ws/src/interbotix_ros_arms/interbotix_sdk/10-interbotix-udev.rules /etc/udev/rules.d
+    $ sudo udevadm control --reload-rules && udevadm trigger
+
+Now plug in the micro-usb cable to your computer. You should see the LEDs flash red as shown in the following figures.
+You could also use ``lsusb`` to see whether the ``Bus 001 Device 002: ID 0403:6014 Future Technology Devices International, Ltd FT232H Single HS USB-UART/FIFO IC`` is listed.
 
 .. image:: figures/microusb.jpeg
     :width: 40%
@@ -194,4 +204,40 @@ Finally, shut down (ctrl C) your launch process and unplug the power cords.
     :width: 50%
 
 YOUR SAFETY IS THE MOST IMPORTANT THING. Please stay safe and have fun with the robots!
+
+Move Group Python Interface
+---------------------------
+
+The `Move Group Python Interface`_ allows users to command desired end-effector poses to an Interbotix arm in a python script.
+It is a good tool when you want to assign multiple commands to the arm and make it moves continuously.
+The `Move Group Python Interface`_ provides functionality for most operations that the average user will likely need,
+specifically setting joint or pose goals, creating motion plans, moving the robot, adding objects into the environment and attaching/detaching objects from the robot.
+
+.. _Move Group Python Interface: http://docs.ros.org/en/kinetic/api/moveit_tutorials/html/doc/move_group_python_interface/move_group_python_interface_tutorial.html
+
+The `intebotix_ros_arm`_ modifies the code so the script could work with ReactorX 150.
+
+- Quick Start: To run the package, type the line in a terminal (if you want to test in simulator, set ``use_gazebo:=true``; 
+if you want to run it in the physical robot, set ``use_actual:=true``)
+
+.. code-block:: bash
+
+    $ roslaunch interbotix_moveit_interface moveit_interface.launch robot_name:=rx150 use_python_interface:=true use_gazebo:=true
+    
+Once you launch the file, you will found one line "============ Press Enter to begin the tutorial by setting up the moveit_commander (press ctrl-d to exit) ...". You might miss it because everything getting launched at the same time. Just scroll through the text to find it. Then press "Enter", you will see a new line and press "Enter" then you could see your arm moves both in the RViz and Gazebo (or the actual robot). The rest can be done in the same manner. 
+
+Here they show multiple functions includes achieving desired joints states, achieving desired pose, ect. 
+Please read the script `moveit_python_interface`_ carefully and try to write your own scripts.
+
+.. _moveit_python_interface: https://github.com/Interbotix/interbotix_ros_arms/blob/master/interbotix_examples/interbotix_moveit_interface/scripts/moveit_python_interface
+
+When you have your own script, do as the following:
+
+1) Navigate to your file and make it as an executable ``chmod +x my_file.py``
+2) Go to the `launch file`_ and replace the ``pkg``, ``type`` with yours.
+
+NOTE: Don't run the ``.py`` script individually here as it will have issus with mapping.
+
+
+
 
