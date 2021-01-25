@@ -238,6 +238,7 @@ When you have your own script, do as the following:
 
 NOTE: Don't run the ``.py`` script individually here as it will have issus with mapping.
 
+.. _launch file: https://github.com/Interbotix/interbotix_ros_arms/blob/master/interbotix_examples/interbotix_moveit_interface/launch/moveit_interface.launch
 
 
 
