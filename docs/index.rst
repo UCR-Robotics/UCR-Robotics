@@ -50,6 +50,7 @@ please see `how to contribute <contribute.html>`_.
     :caption: Manipulator
 
     aram/manipulator
+    aram/mobile_rarm
 
 
 .. toctree::
