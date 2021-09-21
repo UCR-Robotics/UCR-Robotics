@@ -35,22 +35,22 @@ in the Github repository.
 If you would like to contribute to the content, 
 please see `how to contribute <contribute.html>`_.
 
+..
+   .. toctree::
+       :maxdepth: 2
+       :hidden:
+       :caption: Logistics
 
-.. toctree::
-    :maxdepth: 2
-    :hidden:
-    :caption: Logistics
-
-    contribute
+       contribute
 
 
-.. toctree::
-    :maxdepth: 2
-    :hidden:
-    :caption: Manipulator
+   .. toctree::
+       :maxdepth: 2
+       :hidden:
+       :caption: Manipulator
 
-    aram/manipulator
-    aram/mobile_rarm
+       aram/manipulator
+       aram/mobile_rarm
 
 
 .. toctree::
@@ -60,21 +60,21 @@ please see `how to contribute <contribute.html>`_.
 
     intro_ros
         
-    
-.. toctree::
-    :maxdepth: 2
-    :hidden:
-    :caption: Differential-Drive Robot
+..    
+   .. toctree::
+       :maxdepth: 2
+       :hidden:
+       :caption: Differential-Drive Robot
 
-    tbot/moRbt
+       tbot/moRbt
 
 
-.. toctree::
-    :maxdepth: 2
-    :hidden:
-    :caption: Aerial Robot
+   .. toctree::
+       :maxdepth: 2
+       :hidden:
+       :caption: Aerial Robot
 
-    cf/crazyflie
+       cf/crazyflie
 
 
 External Links
