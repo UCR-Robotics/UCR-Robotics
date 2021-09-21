@@ -232,10 +232,11 @@ If you are building your own robot and want to simulate it in Gazebo, please loo
 .. _Gazebo: http://gazebosim.org/tutorials
 .. _tutorial: http://gazebosim.org/tutorials?cat=build_robot
 
-We show an example that describes how to use ROS with Gazebo where it simulates the `ROSbot`_ (a differential-drive wheeled robot). You could find the video at 
-``iLearn -> EE175A(001) Fall2020 -> YuJa -> SHARED -> All Channels -> EE_175A_001_20F -> ee175Demo_all``.
+..
+    We show an example that describes how to use ROS with Gazebo where it simulates the `ROSbot`_ (a differential-drive wheeled robot). You could find the video at 
+    ``iLearn -> EE175A(001) Fall2020 -> YuJa -> SHARED -> All Channels -> EE_175A_001_20F -> ee175Demo_all``.
 
-.. _ROSbot: https://husarion.com/manuals/rosbot-manual/#ros-api
+    .. _ROSbot: https://husarion.com/manuals/rosbot-manual/#ros-api
 
 Resources
 ---------
