@@ -60,15 +60,15 @@ please see `how to contribute <contribute.html>`_.
 
     intro_ros
         
-..    
-   .. toctree::
-       :maxdepth: 2
-       :hidden:
-       :caption: Differential-Drive Robot
+    
+.. toctree::
+    :maxdepth: 2
+    :hidden:
+    :caption: Differential-Drive Robot
 
-       tbot/moRbt
+    tbot/moRbt
 
-
+..
    .. toctree::
        :maxdepth: 2
        :hidden:
