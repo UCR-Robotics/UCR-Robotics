@@ -30,7 +30,7 @@ Installation of the Software
 ----------------------------
 
 1) If you don't have the `catkin workspace`_ in your laptop, 
-open a terminal and run the following code to create a new workspace called ``catkin_ws``
+   open a terminal and run the following code to create a new workspace called ``catkin_ws``
 
 .. _catkin workspace: https://wiki.ros.org/catkin/workspaces
 
@@ -79,8 +79,8 @@ Here we will introduce how to move the robot arm/gripper in Gazebo.
   roslaunch interbotix_moveit interbotix_moveit.launch robot_name:=rx150 use_gazebo:=true
 
 2. Click on the **Play ▶ button** in Gazebo to unpause the simulation. 
-You could also open a terminal and run ``rosservice call /gazebo/unpause_physics`` to achieve it.
-Then you will see the robot arm in RViz (the visualization software used in ROS).
+   You could also open a terminal and run ``rosservice call /gazebo/unpause_physics`` to achieve it.
+   Then you will see the robot arm in RViz (the visualization software used in ROS).
 
 3. Once the RViz starts, you can see two panels. 
   
@@ -100,7 +100,7 @@ Then you will see the robot arm in RViz (the visualization software used in ROS)
     Finally, click on ``Plan and Execute``, you will see the gripper moves.
 
 4. Now, you can take a look at Gazebo and you will find the robot is at the states
-you just set in RViz.  
+   you just set in RViz.  
 
 Access to Lab and Lab Safety
 ----------------------------
@@ -110,20 +110,20 @@ So to use them, you just need to follow the regular procedure required by campus
 That is:
 
 1) Enter your names for particular days/times in the Google Drive `room reservation`_ file. 
-Please make sure there are no more than 6 students having the same reservation.
+   Please make sure there are no more than 6 students having the same reservation.
 
 2) Before you actually head to the lab room, please complete the `symptom survey`_ first.
 
 3) If that's your first time to use the arm, please contact TA to be assigned to a robot arm.
-Then in the following quarter, you will be responsible for that robot and you could use it anytime as long as you get the approval to the lab room.
+   Then in the following quarter, you will be responsible for that robot and you could use it anytime as long as you get the approval to the lab room.
 
 4) When you are at the room, you should scan the 2-D QR code at the door and when you are leaving,
-you also need to scan the QR code to complete your visit.
+   you also need to scan the QR code to complete your visit.
 
 5) Note that whenever a lab is used, its work area, instruments and accessories should be completely cleaned, wiped and disinfected.
-The lab provides all necessary wipes, solutions and disinfectants, 
-so when you are at the lab please wash/wipe your hands often, disinfect anything you touch and use,
-wear masks, keep safe distancing and take all other precautions to prevent the spread of the virus.
+   The lab provides all necessary wipes, solutions and disinfectants, 
+   so when you are at the lab please wash/wipe your hands often, disinfect anything you touch and use,
+   wear masks, keep safe distancing and take all other precautions to prevent the spread of the virus.
 
 Finally, keep in mind that: YOUR SAFETY IS THE MOST IMPORTANT THING!
 
@@ -136,12 +136,12 @@ Hardware Setup
 Most of the setup of the robot arm is ready. You just need to power it and connect it to your laptop.
 
 1) Remove the robot arm from its package and place it on a sturdy and flat surface.
-Also make sure that there are no obstacles within the workspace of the arm or turret.
+   Also make sure that there are no obstacles within the workspace of the arm or turret.
 
 2) Plug the 12V power cable into an outlet and insert the barrel plug into the barrel jack on the X-series power hub.
-Then plug the micro-usb cable into the U2D2.
-While don't plug in the other side to your laptop now.
-Both of the two ports are located under the see-through acrylic on the base of the robot.
+   Then plug the micro-usb cable into the U2D2.
+   While don't plug in the other side to your laptop now.
+   Both of the two ports are located under the see-through acrylic on the base of the robot.
 
 Copy over the udev rules to the right directory so your laptop (or the VMware) could recognize the U2D2.
 
@@ -173,32 +173,32 @@ Here we still use Moveit to help us achieve the desired pose of arm or gripper.
 .. image:: figures/launch.jpeg
     :width: 40%
 
-You should see the light color changes and all the motors in the robot are torqued on..
-If you want to manually manipulate the initial position, you could run
-``$ rosservice call /rx150/torque_joints_off`` in another terminal. 
-Be aware that it will cause the robot to collapse so manually hold the arm before executing it. 
-Once you move the robot manually to your desired initial pose, hold it and run
-``$ rosservice call /rx150/torque_joints_on`` to torqued on motors again.
+   You should see the light color changes and all the motors in the robot are torqued on..
+   If you want to manually manipulate the initial position, you could run
+   ``$ rosservice call /rx150/torque_joints_off`` in another terminal. 
+   Be aware that it will cause the robot to collapse so manually hold the arm before executing it. 
+   Once you move the robot manually to your desired initial pose, hold it and run
+   ``$ rosservice call /rx150/torque_joints_on`` to torqued on motors again.
 
 2) Now you could play with Moveit on your laptop to plan the trajectory (e.g., "home" state as shown) as aforementioned.
-Just note to avoid collisions when you set the goal states and during the planning.
-(You could run ``plan`` to see how it will perform and then ``Execute``). 
+   Just note to avoid collisions when you set the goal states and during the planning.
+   (You could run ``plan`` to see how it will perform and then ``Execute``). 
 
 .. image:: figures/home.jpeg
     :width: 50%
 
 3) The current arm is not equipped with gripper fingers so you could attach any kind of it for your project.
-We provide one type of the fingers in the box. You can easily equip it in the way as shown in the figures.
+   We provide one type of the fingers in the box. You can easily equip it in the way as shown in the figures.
 
 .. image:: figures/gripper.jpeg
     :width: 40%
 
 4) When you are done with your work, please put the arm back safely for further use. 
-Firstly, run ``$ rosservice call /rx150/torque_joints_off`` to torque off the motors, 
-please be very careful as the arm will collapse once you run the command. 
-So you should hold the arm manually before it falls down.
-Then manually put it back to the safe position as illustrated.
-Finally, shut down (ctrl C) your launch process and unplug the power cords.
+   Firstly, run ``$ rosservice call /rx150/torque_joints_off`` to torque off the motors, 
+   please be very careful as the arm will collapse once you run the command. 
+   So you should hold the arm manually before it falls down.
+   Then manually put it back to the safe position as illustrated.
+   Finally, shut down (ctrl C) your launch process and unplug the power cords.
 
 .. image:: figures/origin.jpeg
     :width: 50%
