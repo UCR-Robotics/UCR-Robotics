@@ -43,7 +43,7 @@ Writing a Publisher in Python
         rate = rospy.Rate(10) # 10hz
 
         while not rospy.is_shutdown():
-          content = "welcome to EE144 %s"
+          content = "welcome to the Robotics Lab %s"
           pub.publish(content) 
           rate.sleep() 
 
@@ -95,7 +95,7 @@ Now we are going to explain each sentence of the sample script. Please read care
 .. code-block:: python
 
       while not rospy.is_shutdown():
-          content = "welcome to EE144 %s"
+          content = "welcome to the Robotics Lab %s"
           pub.publish(content) 
           rate.sleep() 
     
