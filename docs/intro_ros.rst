@@ -35,7 +35,7 @@ Writing a Publisher in Python
     #!/usr/bin/env python
 
     import rospy
-    from std_msgs.msg import String
+    from std_msgs.msg import String, Header
 
     def talker():
         rospy.init_node('talker') 
@@ -43,7 +43,10 @@ Writing a Publisher in Python
         rate = rospy.Rate(10) # 10hz
 
         while not rospy.is_shutdown():
-          content = "welcome to the Robotics Lab %s"
+          header = Header()
+          header.stamp = rospy.time.now()
+          
+          content = "welcome to the Robotics Lab " + str(header.stamp)
           pub.publish(content) 
           rate.sleep() 
 
@@ -90,7 +93,7 @@ Now we are going to explain each sentence of the sample script. Please read care
 
     pub = rospy.Publisher('chatter', String, queue_size = 10) 
     
-- This loop is a fairly standard rospy construct: checking the "rospy.is_shutdown()" flag and then doing work. In this case, the "work" is a call to ``pub.publish(content)`` that publishes a string to our "chatter" ``topic``. Keep in mind that the "content" has format "String" (consistent with what we declared in "pub"). The loop calls "rate.sleep()", which sleeps just long enough to maintain the desired rate (10 hz in that script) through the loop.
+- This loop is a fairly standard rospy construct: checking the "rospy.is_shutdown()" flag and then doing work. In this case, the "work" is a call to ``pub.publish(content)`` that publishes a string to our "chatter" ``topic``. Keep in mind that the "content" has format "String" (consistent with what we declared in "pub"). Along with the string information we concat also the corresponding timestamp data, by storing it first in a "Header" variable. The loop calls "rate.sleep()", which sleeps just long enough to maintain the desired rate (10 hz in that script) through the loop.
 
 .. code-block:: python
 
