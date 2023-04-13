@@ -32,7 +32,7 @@ Writing a Publisher in Python
 
 .. code-block:: python
 
-    #!/usr/bin/env python
+    #!/usr/bin/env python3
 
     import rospy
     from std_msgs.msg import String, Header
@@ -44,7 +44,7 @@ Writing a Publisher in Python
 
         while not rospy.is_shutdown():
           header = Header()
-          header.stamp = rospy.time.now()
+          header.stamp = rospy.Time.now()
           
           content = "welcome to the Robotics Lab " + str(header.stamp)
           pub.publish(content) 
@@ -63,7 +63,7 @@ Now we are going to explain each sentence of the sample script. Please read care
 - This first line makes sure your code is executed as a python script.
 .. code-block:: python
 
-    #!/usr/bin/env python
+    #!/usr/bin/env python3
     
 - As mentioned, "rospy" is the python client library that needs to be imported if you are writting a ROS Node.
 
@@ -108,7 +108,7 @@ Writing a Subscriber in Python
 
 .. code-block:: python
 
-    #!/usr/bin/env python
+    #!/usr/bin/env python3
 
     import rospy
     from std_msgs.msg import String
